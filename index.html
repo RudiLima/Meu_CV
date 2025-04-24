@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rudivan Lima - Analista de Suporte</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rudivan Lima dos Santos</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -41,36 +41,21 @@
       max-width: 500px;
       text-align: center;
     }
-    nav {
-      background: #0A66C2;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      padding: 1rem;
-    }
-    .dropdown {
-      position: relative;
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: white;
-      min-width: 200px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-      z-index: 1;
-    }
-    .dropdown-content a {
-      color: #0A66C2;
-      padding: 12px 16px;
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      margin: 0.5rem 1rem 0.5rem 0;
+      padding: 0.4rem 0.8rem;
+      background-color: #0A66C2;
+      color: white;
+      border-radius: 20px;
+      font-size: 0.95rem;
       text-decoration: none;
-      display: block;
     }
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-    .dropdown-content a:hover {
-      background-color: #f1f1f1;
+    .links img {
+      width: 18px;
+      height: 18px;
+      margin-right: 6px;
     }
     main {
       max-width: 900px;
@@ -90,54 +75,80 @@
     ul {
       padding-left: 1.2rem;
     }
-    a {
-      color: #0A66C2;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .links a {
-      display: inline-block;
-      margin: 0.5rem 1rem 0.5rem 0;
-      padding: 0.5rem 1rem;
-      background-color: #0A66C2;
-      color: white;
-      border-radius: 20px;
+    .pessoais {
+      background-color: #e9f1fb;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
     }
     footer {
+      background-color: #0A66C2;
+      color: white;
       text-align: center;
       font-size: 0.8rem;
-      color: #666;
       padding: 2rem;
     }
     footer img {
       width: 60px;
       display: block;
       margin: 0.5rem auto;
-      opacity: 0.6;
+      opacity: 0.8;
     }
   </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const birthDate = new Date('1995-05-14');
+      const today = new Date();
+      let age = today.getFullYear() - birthDate.getFullYear();
+      const m = today.getMonth() - birthDate.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+      }
+      document.getElementById('idade').textContent = age + ' anos';
+    });
+  </script>
 </head>
 <body>
   <header>
     <div class="foto-perfil">
-      <img src="https://raw.githubusercontent.com/RudiLima/Meu_CV/refs/heads/main/Perfil_Foto.jpg" alt="Foto de Rudivan Lima">
+      <img src="https://raw.githubusercontent.com/RudiLima/Meu_CV/refs/heads/main/Perfil_Foto.jpg" alt="Foto de Rudivan Lima" />
     </div>
     <div class="header-info">
       <h1>Rudivan Lima dos Santos</h1>
-      <p>Analista de Suporte</p>
       <div class="links">
-        <a href="https://api.whatsapp.com/send?phone=5511993312157&text=Ol%C3%A1%2C%20Tudo%20bem%20%3F" target="_blank">WhatsApp</a>
-        <a href="http://www.linkedin.com/in/rudilima" target="_blank">LinkedIn</a>
-        <a href="mailto:rudi_van@hotmail.com">Email Pessoal</a>
-        <a href="mailto:rudiservicosdeti@gmail.com">Email Profissional</a>
+        <a href="https://api.whatsapp.com/send?phone=5511993312157&text=Ol%C3%A1%2C%20Tudo%20bem%20%3F" target="_blank">
+          <img src="https://raw.githubusercontent.com/RudiLima/Meu_CV/refs/heads/main/ico_zap.png" alt="WhatsApp">WhatsApp
+        </a>
+        <a href="http://www.linkedin.com/in/rudilima" target="_blank">
+          <img src="https://raw.githubusercontent.com/RudiLima/Meu_CV/refs/heads/main/ico_linkedin.png" alt="LinkedIn">LinkedIn
+        </a>
+        <a href="mailto:rudi_van@hotmail.com">
+          <img src="https://raw.githubusercontent.com/RudiLima/Meu_CV/refs/heads/main/ico_outlook.png" alt="Outlook">Email Pessoal
+        </a>
+        <a href="mailto:rudiservicosdeti@gmail.com">
+          <img src="https://raw.githubusercontent.com/RudiLima/Meu_CV/refs/heads/main/ico_gmail.png" alt="Gmail">Email Profissional
+        </a>
       </div>
     </div>
   </header>
 
   <main>
-    <section id="sobre">
+    <section class="pessoais">
+      <h2>Informações Pessoais</h2>
+      <ul>
+        <li>Idade: <span id="idade"></span></li>
+        <li>Estado civil: Casado</li>
+        <li>Cidade: Osasco – Vila Menck – SP</li>
+        <li>CNH: Categoria A e B</li>
+      </ul>
+    </section>
+
+    <section id="cargo-pretendido">
+      <h2>Cargo Pretendido</h2>
+      <p>Analista de Suporte</p>
+    </section>
+
+    <section>
       <h2>Resumo das Qualificações</h2>
       <ul>
         <li>Funções de apoio e orientação ao usuário desktop e notebook</li>
@@ -157,7 +168,7 @@
       </ul>
     </section>
 
-    <section id="formacao">
+    <section>
       <h2>Formação Acadêmica</h2>
       <ul>
         <li>Gestão em Tecnologia da Informação – ESTÁCIO/FNC – 2016</li>
@@ -165,7 +176,7 @@
       </ul>
     </section>
 
-    <section id="cursos">
+    <section>
       <h2>Cursos</h2>
       <ul>
         <li>Microsoft MD-102: Microsoft 365 Endpoint Administrator – Green Tecnologia</li>
@@ -176,7 +187,7 @@
       </ul>
     </section>
 
-    <section id="certificacoes">
+    <section>
       <h2>Certificações</h2>
       <ul>
         <li>Scrum Foundation Professional Certificate (SFPC) – Certiprof</li>
@@ -184,19 +195,19 @@
       </ul>
     </section>
 
-    <section id="experiencia">
+    <section>
       <h2>Histórico Profissional</h2>
       <h3>MILLS (Out 2021 ~ Atual)</h3>
       <p>Atendimento remoto/telefônico, N2 e VIP. Gerenciamento via AD, O365, LanSweeper, Mildesk, SysAid. Administração de File Server, OU, criação de usuários e ramais em PABX em nuvem, controle de parque de máquinas. Monitoramento com Zabbix e Grafana.</p>
 
       <h3>5ASEC BRASIL FRANCHISING (Jun 2021 ~ Out 2021)</h3>
-      <p>Suporte N1, N2 e VIP. Sistema de PDV "Atendimento", telefonia via Mobcall, Claro Empresas, Postman, MySQL, Google Admin, LocaWeb, Azure Backup, Kaspersky.</p>
+      <p>Suporte N1, N2 e VIP. Sistema de PDV \"Atendimento\", telefonia via Mobcall, Claro Empresas, Postman, MySQL, Google Admin, LocaWeb, Azure Backup, Kaspersky.</p>
 
       <h3>BS TECNOLOGIA (Out 2020 ~ Jun 2021)</h3>
       <p>Atendimento remoto/telefônico, N1/N2, gerenciamento de usuários com AD e Office 365, suporte a impressoras, tratativas com Dell, monitoramento com LanSweeper, Mildesk.</p>
     </section>
 
-    <section id="idiomas">
+    <section>
       <h2>Idiomas</h2>
       <ul>
         <li>Inglês – Leitura e Interpretação de Textos Técnicos</li>
