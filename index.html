@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rudivan Lima - Analista de Suporte</title>
   <style>
     body {
@@ -16,16 +16,30 @@
       background-color: #0A66C2;
       color: white;
       padding: 2rem;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
     }
-    header img.perfil {
+    .foto-perfil {
+      flex-shrink: 0;
+      border: 4px solid white;
+      padding: 5px;
+      background-color: white;
+      border-radius: 10px;
+    }
+    .foto-perfil img {
       width: 160px;
       height: 160px;
-      border-radius: 50%;
       object-fit: cover;
       object-position: center;
-      margin-top: 1rem;
-      border: 4px solid white;
+      border-radius: 10px;
+      display: block;
+    }
+    .header-info {
+      max-width: 500px;
+      text-align: center;
     }
     nav {
       background: #0A66C2;
@@ -68,7 +82,7 @@
     section {
       margin-bottom: 2rem;
     }
-    h2 {
+    h2, h3 {
       color: #0A66C2;
       border-bottom: 2px solid #0A66C2;
       padding-bottom: 0.5rem;
@@ -107,48 +121,40 @@
 </head>
 <body>
   <header>
-    <h1>Rudivan Lima dos Santos</h1>
-    <p>Analista de Suporte</p>
-    <img src="https://github.com/RudiLima/Meu_CV/blob/main/Perfil_Foto.jpg" alt="Foto de Rudivan Lima" class="perfil" />
-    <div class="links">
-      <a href="https://api.whatsapp.com/send?phone=5511993312157&text=Ol%C3%A1%2C%20Tudo%20bem%20%3F" target="_blank">WhatsApp</a>
-      <a href="http://www.linkedin.com/in/rudilima" target="_blank">LinkedIn</a>
-      <a href="mailto:rudi_van@hotmail.com">Email Pessoal</a>
-      <a href="mailto:rudiservicosdeti@gmail.com">Email Profissional</a>
+    <div class="foto-perfil">
+      <img src="IMG_0078.jpg" alt="Foto de Rudivan Lima">
+    </div>
+    <div class="header-info">
+      <h1>Rudivan Lima dos Santos</h1>
+      <p>Analista de Suporte</p>
+      <div class="links">
+        <a href="https://api.whatsapp.com/send?phone=5511993312157&text=Ol%C3%A1%2C%20Tudo%20bem%20%3F" target="_blank">WhatsApp</a>
+        <a href="http://www.linkedin.com/in/rudilima" target="_blank">LinkedIn</a>
+        <a href="mailto:rudi_van@hotmail.com">Email Pessoal</a>
+        <a href="mailto:rudiservicosdeti@gmail.com">Email Profissional</a>
+      </div>
     </div>
   </header>
 
-  <nav>
-    <div class="dropdown">
-      <a href="#sobre">Sobre</a>
-    </div>
-    <div class="dropdown">
-      <a href="#formacao">Formação</a>
-    </div>
-    <div class="dropdown">
-      <a href="#certificacoes">Cursos</a>
-      <div class="dropdown-content">
-        <a href="#certificacoes">Certificações</a>
-        <a href="#cursos">Cursos Profissionais</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <a href="#experiencia">Experiência</a>
-      <div class="dropdown-content">
-        <a href="#mills">MILLS</a>
-        <a href="#5asec">5àSec</a>
-        <a href="#bs">BS Tecnologia</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <a href="#idiomas">Idiomas</a>
-    </div>
-  </nav>
-
   <main>
     <section id="sobre">
-      <h2>Sobre</h2>
-      <p>Profissional com experiência em suporte técnico, infraestrutura de TI, redes, Active Directory e Office 365. Habilidade com ferramentas como Zabbix, Grafana, LanSweeper, entre outras.</p>
+      <h2>Resumo das Qualificações</h2>
+      <ul>
+        <li>Funções de apoio e orientação ao usuário desktop e notebook</li>
+        <li>Monitoramento com Zabbix e Grafana</li>
+        <li>Instalação, configuração e manutenção de software Windows</li>
+        <li>Gerenciamento de impressoras e dispositivos diversos</li>
+        <li>Suporte aos usuários nível I, II e VIP</li>
+        <li>Infraestrutura de redes LAN/WAN e protocolos de comunicação</li>
+        <li>Administração de servidores Windows</li>
+        <li>Criação e gerenciamento de usuários, grupos e permissões (ERP, AD, Office 365)</li>
+        <li>Chamados via Cervello, Mildesk, SysAid</li>
+        <li>Implantação de domínios, WSUS, OCS, Lansweeper</li>
+        <li>Gestão de telefonia VOIP</li>
+        <li>Documentação e manuais de processos para equipe e usuários</li>
+        <li>Instalação/configuração SAP, ferramentas de acesso remoto (EchoVNC, Anydesk etc.)</li>
+        <li>Organização de Racks, cabeamento e certificação de cabos</li>
+      </ul>
     </section>
 
     <section id="formacao">
@@ -156,6 +162,17 @@
       <ul>
         <li>Gestão em Tecnologia da Informação – ESTÁCIO/FNC – 2016</li>
         <li>Técnico em Redes de Computadores – ITB Paulista – 2018</li>
+      </ul>
+    </section>
+
+    <section id="cursos">
+      <h2>Cursos</h2>
+      <ul>
+        <li>Microsoft MD-102: Microsoft 365 Endpoint Administrator – Green Tecnologia</li>
+        <li>Microsoft AZ-900: Azure Fundamentals – Ka Solutions</li>
+        <li>Microsoft MS-900: Microsoft 365 Fundamentals – Ka Solutions</li>
+        <li>Office 365 para Administradores – Wenz Cursos</li>
+        <li>LGPD Essentials – TI Exames</li>
       </ul>
     </section>
 
@@ -167,44 +184,30 @@
       </ul>
     </section>
 
-    <section id="cursos">
-      <h2>Cursos Profissionais</h2>
-      <ul>
-        <li>Microsoft MD-102, AZ-900, MS-900</li>
-        <li>Office 365 para Administradores – Wenz Cursos</li>
-        <li>LGPD Essentials – TI Exames</li>
-      </ul>
-    </section>
-
     <section id="experiencia">
-      <h2>Experiência Profissional</h2>
-      <section id="mills">
-        <h3>MILLS (Out/2021 - Atual)</h3>
-        <p>Atendimento remoto e telefônico, suporte N2 e VIP, gerenciamento de usuários via AD e O365, uso de Mildesk e SysAid, administração do File Server, Zabbix e Grafana, controle de parque de máquinas, entre outros.</p>
-      </section>
-      <section id="5asec">
-        <h3>5àSec Brasil (Jun/2021 - Out/2021)</h3>
-        <p>Suporte N1/N2/VIP, PDV "Atendimento", telefonia em nuvem (Mobcall), Google Admin, LocaWeb, MySQL, Azure Backup, KarperSky, entre outros.</p>
-      </section>
-      <section id="bs">
-        <h3>BS Tecnologia (Out/2020 - Jun/2021)</h3>
-        <p>Suporte técnico remoto e presencial, impressoras, Mildesk, AD e Office 365, preparação de máquinas, entre outros.</p>
-      </section>
-      <p><a href="https://www.linkedin.com/in/rudilima/" target="_blank">Veja toda a trajetória no LinkedIn</a></p>
+      <h2>Histórico Profissional</h2>
+      <h3>MILLS (Out 2021 ~ Atual)</h3>
+      <p>Atendimento remoto/telefônico, N2 e VIP. Gerenciamento via AD, O365, LanSweeper, Mildesk, SysAid. Administração de File Server, OU, criação de usuários e ramais em PABX em nuvem, controle de parque de máquinas. Monitoramento com Zabbix e Grafana.</p>
+
+      <h3>5ASEC BRASIL FRANCHISING (Jun 2021 ~ Out 2021)</h3>
+      <p>Suporte N1, N2 e VIP. Sistema de PDV "Atendimento", telefonia via Mobcall, Claro Empresas, Postman, MySQL, Google Admin, LocaWeb, Azure Backup, Kaspersky.</p>
+
+      <h3>BS TECNOLOGIA (Out 2020 ~ Jun 2021)</h3>
+      <p>Atendimento remoto/telefônico, N1/N2, gerenciamento de usuários com AD e Office 365, suporte a impressoras, tratativas com Dell, monitoramento com LanSweeper, Mildesk.</p>
     </section>
 
     <section id="idiomas">
       <h2>Idiomas</h2>
       <ul>
-        <li>Inglês: Leitura e interpretação técnica</li>
-        <li>Libras: Básico</li>
+        <li>Inglês – Leitura e Interpretação de Textos Técnicos</li>
+        <li>Libras – Nível básico de conversação – concluído em 2019</li>
       </ul>
     </section>
   </main>
 
   <footer>
     <p>Disponível também para trabalhos como Pessoa Jurídica (CNPJ: 57.495.934/0001-69)</p>
-    <img src="https://github.com/RudiLima/Meu_CV/blob/main/Logo.png" alt="Logotipo discreto Rudivan Lima" />
+    <img src="ima.png" alt="Logotipo discreto Rudivan Lima">
   </footer>
 </body>
 </html>
