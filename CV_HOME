@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rudivan Lima - Analista de Suporte</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background-color: #0A66C2;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    header img.perfil {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      margin-top: 1rem;
+      border: 4px solid white;
+    }
+    nav {
+      background: #0A66C2;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 200px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    .dropdown-content a {
+      color: #0A66C2;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    h2 {
+      color: #0A66C2;
+      border-bottom: 2px solid #0A66C2;
+      padding-bottom: 0.5rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    a {
+      color: #0A66C2;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .links a {
+      display: inline-block;
+      margin: 0.5rem 1rem 0.5rem 0;
+      padding: 0.5rem 1rem;
+      background-color: #0A66C2;
+      color: white;
+      border-radius: 20px;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #666;
+      padding: 2rem;
+    }
+    footer img {
+      width: 60px;
+      display: block;
+      margin: 0.5rem auto;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Rudivan Lima dos Santos</h1>
+    <p>Analista de Suporte</p>
+    <img src="IMG_0078.jpg" alt="Foto de Rudivan Lima" class="perfil" />
+    <div class="links">
+      <a href="https://api.whatsapp.com/send?phone=5511993312157&text=Ol%C3%A1%2C%20Tudo%20bem%20%3F" target="_blank">WhatsApp</a>
+      <a href="http://www.linkedin.com/in/rudilima" target="_blank">LinkedIn</a>
+      <a href="mailto:rudi_van@hotmail.com">Email Pessoal</a>
+      <a href="mailto:rudiservicosdeti@gmail.com">Email Profissional</a>
+    </div>
+  </header>
+
+  <nav>
+    <div class="dropdown">
+      <a href="#sobre">Sobre</a>
+    </div>
+    <div class="dropdown">
+      <a href="#formacao">Formação</a>
+    </div>
+    <div class="dropdown">
+      <a href="#certificacoes">Cursos</a>
+      <div class="dropdown-content">
+        <a href="#certificacoes">Certificações</a>
+        <a href="#cursos">Cursos Profissionais</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="#experiencia">Experiência</a>
+      <div class="dropdown-content">
+        <a href="#mills">MILLS</a>
+        <a href="#5asec">5àSec</a>
+        <a href="#bs">BS Tecnologia</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="#idiomas">Idiomas</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="sobre">
+      <h2>Sobre</h2>
+      <p>Profissional com experiência em suporte técnico, infraestrutura de TI, redes, Active Directory e Office 365. Habilidade com ferramentas como Zabbix, Grafana, LanSweeper, entre outras.</p>
+    </section>
+
+    <section id="formacao">
+      <h2>Formação Acadêmica</h2>
+      <ul>
+        <li>Gestão em Tecnologia da Informação – ESTÁCIO/FNC – 2016</li>
+        <li>Técnico em Redes de Computadores – ITB Paulista – 2018</li>
+      </ul>
+    </section>
+
+    <section id="certificacoes">
+      <h2>Certificações</h2>
+      <ul>
+        <li>Scrum Foundation Professional Certificate (SFPC) – Certiprof</li>
+        <li>Kanban Foundation (KIKF) – Certiprof</li>
+      </ul>
+    </section>
+
+    <section id="cursos">
+      <h2>Cursos Profissionais</h2>
+      <ul>
+        <li>Microsoft MD-102, AZ-900, MS-900</li>
+        <li>Office 365 para Administradores – Wenz Cursos</li>
+        <li>LGPD Essentials – TI Exames</li>
+      </ul>
+    </section>
+
+    <section id="experiencia">
+      <h2>Experiência Profissional</h2>
+      <section id="mills">
+        <h3>MILLS (Out/2021 - Atual)</h3>
+        <p>Atendimento remoto e telefônico, suporte N2 e VIP, gerenciamento de usuários via AD e O365, uso de Mildesk e SysAid, administração do File Server, Zabbix e Grafana, controle de parque de máquinas, entre outros.</p>
+      </section>
+      <section id="5asec">
+        <h3>5àSec Brasil (Jun/2021 - Out/2021)</h3>
+        <p>Suporte N1/N2/VIP, PDV "Atendimento", telefonia em nuvem (Mobcall), Google Admin, LocaWeb, MySQL, Azure Backup, KarperSky, entre outros.</p>
+      </section>
+      <section id="bs">
+        <h3>BS Tecnologia (Out/2020 - Jun/2021)</h3>
+        <p>Suporte técnico remoto e presencial, impressoras, Mildesk, AD e Office 365, preparação de máquinas, entre outros.</p>
+      </section>
+      <p><a href="https://www.linkedin.com/in/rudilima/" target="_blank">Veja toda a trajetória no LinkedIn</a></p>
+    </section>
+
+    <section id="idiomas">
+      <h2>Idiomas</h2>
+      <ul>
+        <li>Inglês: Leitura e interpretação técnica</li>
+        <li>Libras: Básico</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Disponível também para trabalhos como Pessoa Jurídica (CNPJ: 57.495.934/0001-69)</p>
+    <img src="ima.png" alt="Logotipo discreto Rudivan Lima" />
+  </footer>
+</body>
+</html>
