@@ -109,7 +109,7 @@
   <header>
     <h1>Rudivan Lima dos Santos</h1>
     <p>Analista de Suporte</p>
-    <img src="IMG_0078.jpg" alt="Foto de Rudivan Lima" class="perfil" />
+    <img src="https://github.com/RudiLima/Meu_CV/blob/main/Perfil_Foto.jpg" alt="Foto de Rudivan Lima" class="perfil" />
     <div class="links">
       <a href="https://api.whatsapp.com/send?phone=5511993312157&text=Ol%C3%A1%2C%20Tudo%20bem%20%3F" target="_blank">WhatsApp</a>
       <a href="http://www.linkedin.com/in/rudilima" target="_blank">LinkedIn</a>
@@ -204,7 +204,7 @@
 
   <footer>
     <p>Disponível também para trabalhos como Pessoa Jurídica (CNPJ: 57.495.934/0001-69)</p>
-    <img src="ima.png" alt="Logotipo discreto Rudivan Lima" />
+    <img src="https://github.com/RudiLima/Meu_CV/blob/main/Logo.png" alt="Logotipo discreto Rudivan Lima" />
   </footer>
 </body>
 </html>
