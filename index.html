@@ -1,320 +1,162 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rudivan Lima dos Santos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currículo - Rudivan Lima dos Santos</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f5f5f5;
-      color: #333;
-    }
-    header {
-      background-color: #0A66C2;
-      color: white;
-      padding: 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-    .foto-perfil {
-      flex-shrink: 0;
-      border: 4px solid white;
-      padding: 5px;
-      background-color: white;
-      border-radius: 10px;
-    }
-    .foto-perfil img {
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 10px;
-      display: block;
-    }
-    .header-info {
-      max-width: 500px;
-      text-align: center;
-    }
-    .links a {
-      display: inline-flex;
-      align-items: center;
-      margin: 0.5rem 1rem 0.5rem 0;
-      padding: 0.4rem 0.8rem;
-      background-color: #0A66C2;
-      color: white;
-      border-radius: 20px;
-      font-size: 0.95rem;
-      text-decoration: none;
-    }
-    .links img {
-      width: 18px;
-      height: 18px;
-      margin-right: 6px;
-    }
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background: white;
-      border-radius: 8px;
-    }
-    section {
-      margin-bottom: 2rem;
-    }
-    h2, h3 {
-      color: #0A66C2;
-      border-bottom: 2px solid #0A66C2;
-      padding-bottom: 0.5rem;
-    }
-    ul {
-      padding-left: 1.2rem;
-    }
-    .pessoais {
-      background-color: #e9f1fb;
-      padding: 1rem;
-      border-radius: 8px;
-      margin-bottom: 2rem;
-    }
-    footer {
-      background-color: #0A66C2;
-      color: white;
-      text-align: center;
-      font-size: 0.8rem;
-      padding: 2rem;
-    }
-    footer img {
-      width: 60px;
-      display: block;
-      margin: 0.5rem auto;
-      opacity: 0.8;
+      font-family: Arial, sans-serif;
+      color: #000;
+      background: #fff;
+      margin: 40px;
     }
 
-    /* Botão flutuante */
-    .btn-float {
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    header p {
+      margin: 4px 0;
+      font-size: 14px;
+    }
+
+    section {
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 18px;
+      border-bottom: 1px solid #000;
+      padding-bottom: 3px;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .btn-print {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background-color: #0A66C2;
-      color: white;
+      background-color: #000;
+      color: #fff;
       border: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 50px;
-      font-size: 1rem;
+      padding: 10px 20px;
+      border-radius: 5px;
       cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      z-index: 1000;
+      font-size: 14px;
     }
 
-    /* Linha do tempo */
-    .timeline {
-      position: relative;
-      margin-left: 1rem;
-      padding-left: 2rem;
-      border-left: 3px solid #0A66C2;
-    }
-    .timeline-item {
-      position: relative;
-      margin-bottom: 2rem;
-    }
-    .timeline-date {
-      font-weight: bold;
-      color: #0A66C2;
-      margin-bottom: 0.3rem;
-    }
-    .timeline-content {
-      background-color: #f0f6ff;
-      padding: 1rem;
-      border-left: 4px solid #0A66C2;
-      border-radius: 6px;
-    }
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: -11px;
-      top: 5px;
-      width: 14px;
-      height: 14px;
-      background-color: #0A66C2;
-      border-radius: 50%;
-      border: 2px solid white;
-    }
-
-    /* Estilos de impressão */
     @media print {
-      .btn-float {
-        display: none !important;
-      }
-      body {
-        background: white !important;
-      }
-      header, main, footer {
-        break-inside: avoid;
-        page-break-inside: avoid;
-      }
-      section {
-        page-break-before: auto;
-        page-break-after: auto;
-        page-break-inside: avoid;
-      }
-      .timeline-content {
-        page-break-inside: avoid;
-      }
-      footer {
-        position: static;
+      .btn-print {
+        display: none;
       }
     }
   </style>
   <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const birthDate = new Date('1995-05-14');
-      const today = new Date();
-      let age = today.getFullYear() - birthDate.getFullYear();
-      const m = today.getMonth() - birthDate.getMonth();
-      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-        age--;
-      }
-      document.getElementById('idade').textContent = age + ' anos';
-    });
-
-    function baixarPDF() {
+    function imprimirCV() {
       window.print();
     }
   </script>
 </head>
 <body>
-  <button class="btn-float" onclick="baixarPDF()">Baixar CV</button>
+
+  <button class="btn-print" onclick="imprimirCV()">Imprimir PDF</button>
 
   <header>
-    <div class="foto-perfil">
-      <img src="https://raw.githubusercontent.com/RudiLima/Meu_CV/refs/heads/main/Perfil_Foto.jpg" alt="Foto de Rudivan Lima" />
-    </div>
-    <div class="header-info">
-      <h1>Rudivan Lima dos Santos</h1>
-      <div class="links">
-        <a href="https://api.whatsapp.com/send?phone=5511993312157&text=Ol%C3%A1%2C%20Tudo%20bem%20%3F" target="_blank">
-          <img src="https://raw.githubusercontent.com/RudiLima/Meu_CV/refs/heads/main/ico_zap.png" alt="WhatsApp">WhatsApp
-        </a>
-        <a href="http://www.linkedin.com/in/rudilima" target="_blank">
-          <img src="https://raw.githubusercontent.com/RudiLima/Meu_CV/refs/heads/main/ico_linkedin.png" alt="LinkedIn">LinkedIn
-        </a>
-        <a href="mailto:rudi_van@hotmail.com">
-          <img src="https://raw.githubusercontent.com/RudiLima/Meu_CV/refs/heads/main/ico_outlook.png" alt="Outlook">Email Pessoal
-        </a>
-        <a href="mailto:rudiservicosdeti@gmail.com">
-          <img src="https://raw.githubusercontent.com/RudiLima/Meu_CV/refs/heads/main/ico_gmail.png" alt="Gmail">Email Profissional
-        </a>
-      </div>
-    </div>
+    <h1>Rudivan Lima dos Santos</h1>
+    <p>Osasco - SP | CNH: A e B</p>
+    <p>Email: rudi_van@hotmail.com | rudiservicosdeti@gmail.com</p>
+    <p>LinkedIn: linkedin.com/in/rudilima | WhatsApp: (11) 99331-2157</p>
   </header>
 
-  <main>
-    <section class="pessoais">
-      <h2>Informações Pessoais</h2>
-      <ul>
-        <li>Idade: <span id="idade"></span></li>
-        <li>Estado civil: Casado</li>
-        <li>Cidade: Osasco – Vila Menck – SP</li>
-        <li>CNH: Categoria A e B</li>
-      </ul>
-    </section>
+  <section>
+    <h2>Informações Pessoais</h2>
+    <p>Idade: 28 anos</p>
+    <p>Estado civil: Casado</p>
+    <p>Cidade: Osasco - Vila Menck - SP</p>
+    <p>CNH: Categoria A e B</p>
+  </section>
 
-    <section id="cargo-pretendido">
-      <h2>Cargo Pretendido</h2>
-      <p>Analista de Suporte</p>
-    </section>
+  <section>
+    <h2>Cargo Pretendido</h2>
+    <p>Analista de Suporte</p>
+  </section>
 
-    <section>
-      <h2>Resumo das Qualificações</h2>
-      <ul>
-        <li>Funções de apoio e orientação ao usuário desktop e notebook</li>
-        <li>Monitoramento com Zabbix e Grafana</li>
-        <li>Instalação, configuração e manutenção de software Windows</li>
-        <li>Gerenciamento de impressoras e dispositivos diversos</li>
-        <li>Suporte aos usuários nível I, II e VIP</li>
-        <li>Infraestrutura de redes LAN/WAN e protocolos de comunicação</li>
-        <li>Administração de servidores Windows</li>
-        <li>Criação e gerenciamento de usuários, grupos e permissões (ERP, AD, Office 365)</li>
-        <li>Chamados via Cervello, Mildesk, SysAid</li>
-        <li>Implantação de domínios, WSUS, OCS, Lansweeper</li>
-        <li>Gestão de telefonia VOIP</li>
-        <li>Documentação e manuais de processos para equipe e usuários</li>
-        <li>Instalação/configuração SAP, ferramentas de acesso remoto (EchoVNC, Anydesk etc.)</li>
-        <li>Organização de Racks, cabeamento e certificação de cabos</li>
-      </ul>
-    </section>
+  <section>
+    <h2>Resumo das Qualificações</h2>
+    <ul>
+      <li>Funções de apoio e orientação ao usuário desktop e notebook</li>
+      <li>Monitoramento com Zabbix e Grafana</li>
+      <li>Instalação, configuração e manutenção de software Windows</li>
+      <li>Gerenciamento de impressoras e dispositivos diversos</li>
+      <li>Suporte aos usuários nível I, II e VIP</li>
+      <li>Infraestrutura de redes LAN/WAN e protocolos de comunicação</li>
+      <li>Administração de servidores Windows</li>
+      <li>Criação e gerenciamento de usuários, grupos e permissões (ERP, AD, Office 365)</li>
+      <li>Chamados via Cervello, Mildesk, SysAid</li>
+      <li>Implantação de domínios, WSUS, OCS, Lansweeper</li>
+      <li>Gestão de telefonia VOIP</li>
+      <li>Documentação e manuais de processos para equipe e usuários</li>
+      <li>Instalação/configuração SAP, ferramentas de acesso remoto (EchoVNC, Anydesk etc.)</li>
+      <li>Organização de Racks, cabeamento e certificação de cabos</li>
+    </ul>
+  </section>
 
-    <section>
-      <h2>Formação Acadêmica</h2>
-      <ul>
-        <li>Gestão em Tecnologia da Informação – ESTÁCIO/FNC – 2016</li>
-        <li>Técnico em Redes de Computadores – ITB Paulista – 2018</li>
-      </ul>
-    </section>
+  <section>
+    <h2>Formação Acadêmica</h2>
+    <ul>
+      <li>Gestão em Tecnologia da Informação - ESTÁCIO/FNC - 2016</li>
+      <li>Técnico em Redes de Computadores - ITB Paulista - 2018</li>
+    </ul>
+  </section>
 
-    <section>
-      <h2>Cursos</h2>
-      <ul>
-        <li>Microsoft MD-102: Microsoft 365 Endpoint Administrator – Green Tecnologia</li>
-        <li>Microsoft AZ-900: Azure Fundamentals – Ka Solutions</li>
-        <li>Microsoft MS-900: Microsoft 365 Fundamentals – Ka Solutions</li>
-        <li>Office 365 para Administradores – Wenz Cursos</li>
-        <li>LGPD Essentials – TI Exames</li>
-      </ul>
-    </section>
+  <section>
+    <h2>Cursos</h2>
+    <ul>
+      <li>Microsoft MD-102: Microsoft 365 Endpoint Administrator - Green Tecnologia</li>
+      <li>Microsoft AZ-900: Azure Fundamentals - Ka Solutions</li>
+      <li>Microsoft MS-900: Microsoft 365 Fundamentals - Ka Solutions</li>
+      <li>Office 365 para Administradores - Wenz Cursos</li>
+      <li>LGPD Essentials - TI Exames</li>
+    </ul>
+  </section>
 
-    <section>
-      <h2>Certificações</h2>
-      <ul>
-        <li>Scrum Foundation Professional Certificate (SFPC) – Certiprof</li>
-        <li>Kanban Foundation (KIKF) – Certiprof</li>
-      </ul>
-    </section>
+  <section>
+    <h2>Certificações</h2>
+    <ul>
+      <li>Scrum Foundation Professional Certificate (SFPC) - Certiprof</li>
+      <li>Kanban Foundation (KIKF) - Certiprof</li>
+    </ul>
+  </section>
 
-    <section>
-      <h2>Histórico Profissional</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-date">Out 2021 – Atual</div>
-          <div class="timeline-content">
-            <h3>MILLS</h3>
-            <p>Atendimento remoto/telefônico, N2 e VIP. Gerenciamento via AD, O365, LanSweeper, Mildesk, SysAid. Administração de File Server, OU, criação de usuários e ramais em PABX em nuvem, controle de parque de máquinas. Monitoramento com Zabbix e Grafana.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-date">Jun 2021 – Out 2021</div>
-          <div class="timeline-content">
-            <h3>5ASEC BRASIL FRANCHISING</h3>
-            <p>Suporte N1, N2 e VIP. Sistema de PDV "Atendimento", telefonia via Mobcall, Claro Empresas, Postman, MySQL, Google Admin, LocaWeb, Azure Backup, Kaspersky.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-date">Out 2020 – Jun 2021</div>
-          <div class="timeline-content">
-            <h3>BS TECNOLOGIA</h3>
-            <p>Atendimento remoto/telefônico, N1/N2, gerenciamento de usuários com AD e Office 365, suporte a impressoras, tratativas com Dell, monitoramento com LanSweeper, Mildesk.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+  <section>
+    <h2>Histórico Profissional</h2>
+    <p><strong>MILLS (Out 2021 ~ Atual)</strong><br>
+    Atendimento remoto/telefônico, N2 e VIP. Gerenciamento via AD, O365, LanSweeper, Mildesk, SysAid. Administração de File Server, OU, criação de usuários e ramais em PABX em nuvem, controle de parque de máquinas. Monitoramento com Zabbix e Grafana.</p>
 
-    <section>
-      <h2>Idiomas</h2>
-      <ul>
-        <li>Inglês – Leitura e Interpretação de Textos Técnicos</li>
-        <li>Libras – Nível básico de conversação – concluído em 2019</li>
-      </ul>
-    </section>
-  </main>
+    <p><strong>5ASEC BRASIL FRANCHISING (Jun 2021 ~ Out 2021)</strong><br>
+    Suporte N1, N2 e VIP. Sistema de PDV "Atendimento", telefonia via Mobcall, Claro Empresas, Postman, MySQL, Google Admin, LocaWeb, Azure Backup, Kaspersky.</p>
 
-  <footer>
-    <p>Disponível também para trabalhos como Pessoa Jurídica (CNPJ: 57.495.934/0001-69)</p>
-    <img src="https://raw.githubusercontent.com/RudiLima/Meu_CV/refs/heads/main/Logo.png" alt="Logotipo discreto Rudivan Lima">
-  </footer>
+    <p><strong>BS TECNOLOGIA (Out 2020 ~ Jun 2021)</strong><br>
+    Atendimento remoto/telefônico, N1/N2, gerenciamento de usuários com AD e Office 365, suporte a impressoras, tratativas com Dell, monitoramento com LanSweeper, Mildesk.</p>
+  </section>
+
+  <section>
+    <h2>Idiomas</h2>
+    <ul>
+      <li>Inglês - Leitura e Interpretação de Textos Técnicos</li>
+      <li>Libras - Nível básico de conversação - concluído em 2019</li>
+    </ul>
+  </section>
+
 </body>
 </html>
