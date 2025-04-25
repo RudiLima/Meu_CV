@@ -94,6 +94,8 @@
       margin: 0.5rem auto;
       opacity: 0.8;
     }
+
+    /* Botão flutuante */
     .btn-float {
       position: fixed;
       bottom: 20px;
@@ -142,8 +144,32 @@
       border-radius: 50%;
       border: 2px solid white;
     }
+
+    /* Estilos de impressão */
+    @media print {
+      .btn-float {
+        display: none !important;
+      }
+      body {
+        background: white !important;
+      }
+      header, main, footer {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      section {
+        page-break-before: auto;
+        page-break-after: auto;
+        page-break-inside: avoid;
+      }
+      .timeline-content {
+        page-break-inside: avoid;
+      }
+      footer {
+        position: static;
+      }
+    }
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       const birthDate = new Date('1995-05-14');
@@ -157,14 +183,7 @@
     });
 
     function baixarPDF() {
-      const element = document.body;
-      html2pdf().set({
-        margin: 0.5,
-        filename: 'Curriculo_Rudivan_Lima.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
-      }).from(element).save();
+      window.print();
     }
   </script>
 </head>
