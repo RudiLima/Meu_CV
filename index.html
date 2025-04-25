@@ -94,7 +94,56 @@
       margin: 0.5rem auto;
       opacity: 0.8;
     }
+    .btn-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #0A66C2;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+
+    /* Linha do tempo */
+    .timeline {
+      position: relative;
+      margin-left: 1rem;
+      padding-left: 2rem;
+      border-left: 3px solid #0A66C2;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+    .timeline-date {
+      font-weight: bold;
+      color: #0A66C2;
+      margin-bottom: 0.3rem;
+    }
+    .timeline-content {
+      background-color: #f0f6ff;
+      padding: 1rem;
+      border-left: 4px solid #0A66C2;
+      border-radius: 6px;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -11px;
+      top: 5px;
+      width: 14px;
+      height: 14px;
+      background-color: #0A66C2;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       const birthDate = new Date('1995-05-14');
@@ -106,9 +155,22 @@
       }
       document.getElementById('idade').textContent = age + ' anos';
     });
+
+    function baixarPDF() {
+      const element = document.body;
+      html2pdf().set({
+        margin: 0.5,
+        filename: 'Curriculo_Rudivan_Lima.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+      }).from(element).save();
+    }
   </script>
 </head>
 <body>
+  <button class="btn-float" onclick="baixarPDF()">Baixar CV</button>
+
   <header>
     <div class="foto-perfil">
       <img src="https://raw.githubusercontent.com/RudiLima/Meu_CV/refs/heads/main/Perfil_Foto.jpg" alt="Foto de Rudivan Lima" />
@@ -197,14 +259,29 @@
 
     <section>
       <h2>Histórico Profissional</h2>
-      <h3>MILLS (Out 2021 ~ Atual)</h3>
-      <p>Atendimento remoto/telefônico, N2 e VIP. Gerenciamento via AD, O365, LanSweeper, Mildesk, SysAid. Administração de File Server, OU, criação de usuários e ramais em PABX em nuvem, controle de parque de máquinas. Monitoramento com Zabbix e Grafana.</p>
-
-      <h3>5ASEC BRASIL FRANCHISING (Jun 2021 ~ Out 2021)</h3>
-      <p>Suporte N1, N2 e VIP. Sistema de PDV \"Atendimento\", telefonia via Mobcall, Claro Empresas, Postman, MySQL, Google Admin, LocaWeb, Azure Backup, Kaspersky.</p>
-
-      <h3>BS TECNOLOGIA (Out 2020 ~ Jun 2021)</h3>
-      <p>Atendimento remoto/telefônico, N1/N2, gerenciamento de usuários com AD e Office 365, suporte a impressoras, tratativas com Dell, monitoramento com LanSweeper, Mildesk.</p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">Out 2021 – Atual</div>
+          <div class="timeline-content">
+            <h3>MILLS</h3>
+            <p>Atendimento remoto/telefônico, N2 e VIP. Gerenciamento via AD, O365, LanSweeper, Mildesk, SysAid. Administração de File Server, OU, criação de usuários e ramais em PABX em nuvem, controle de parque de máquinas. Monitoramento com Zabbix e Grafana.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Jun 2021 – Out 2021</div>
+          <div class="timeline-content">
+            <h3>5ASEC BRASIL FRANCHISING</h3>
+            <p>Suporte N1, N2 e VIP. Sistema de PDV "Atendimento", telefonia via Mobcall, Claro Empresas, Postman, MySQL, Google Admin, LocaWeb, Azure Backup, Kaspersky.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Out 2020 – Jun 2021</div>
+          <div class="timeline-content">
+            <h3>BS TECNOLOGIA</h3>
+            <p>Atendimento remoto/telefônico, N1/N2, gerenciamento de usuários com AD e Office 365, suporte a impressoras, tratativas com Dell, monitoramento com LanSweeper, Mildesk.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section>
