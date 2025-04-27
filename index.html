@@ -1,162 +1,173 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Currículo - Rudivan Lima dos Santos</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rudivan Lima dos Santos</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      color: #000;
-      background: #fff;
-      margin: 40px;
+      margin: 0;
+      padding: 2rem;
+      background-color: #e6ecf5;
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
     }
-
+    .container {
+      max-width: 850px;
+      margin: auto;
+      background: white;
+      padding: 2rem;
+      border: 5px solid #0A66C2;
+    }
     header {
-      text-align: center;
-      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      border-bottom: 2px solid #0A66C2;
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
     }
-
-    header h1 {
-      font-size: 24px;
+    .info-left {
+      font-size: 1.8rem;
+      color: #0A66C2;
+      font-weight: bold;
+    }
+    .info-right {
+      text-align: right;
+      font-size: 0.9rem;
+    }
+    .info-right a {
+      color: #0A66C2;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    h2 {
+      background-color: #0A66C2;
+      color: white;
+      font-size: 1.2rem;
+      padding: 0.5rem;
+      margin: 1.5rem 0 1rem 0;
+    }
+    h3 {
+      color: #0A66C2;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+    ul {
+      padding-left: 1.2rem;
       margin: 0;
     }
-
-    header p {
-      margin: 4px 0;
-      font-size: 14px;
+    ul li {
+      margin-bottom: 0.5rem;
     }
-
-    section {
-      margin-bottom: 20px;
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      margin-top: 2rem;
     }
-
-    h2 {
-      font-size: 18px;
-      border-bottom: 1px solid #000;
-      padding-bottom: 3px;
-      margin-bottom: 10px;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    .btn-print {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #000;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    @media print {
-      .btn-print {
-        display: none;
-      }
+    footer img {
+      width: 60px;
+      margin-top: 1rem;
+      opacity: 0.8;
     }
   </style>
   <script>
-    function imprimirCV() {
-      window.print();
-    }
+    window.addEventListener('DOMContentLoaded', () => {
+      const birthDate = new Date('1995-05-14');
+      const today = new Date();
+      let age = today.getFullYear() - birthDate.getFullYear();
+      const m = today.getMonth() - birthDate.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+      }
+      document.getElementById('idade').textContent = age + ' anos';
+    });
   </script>
 </head>
 <body>
+  <div class="container">
+    <header>
+      <div class="info-left">
+        Rudivan Lima dos Santos
+      </div>
+      <div class="info-right">
+        (11) 9.9331-2157<br>
+        <a href="http://www.linkedin.com/in/rudilima" target="_blank">LinkedIn</a>
+        <a href="mailto:rudi_van@hotmail.com">rudi_van@hotmail.com</a>
+        <a href="mailto:rudiservicosdeti@gmail.com">rudiservicosdeti@gmail.com</a>
+      </div>
+    </header>
 
-  <button class="btn-print" onclick="imprimirCV()">Imprimir PDF</button>
+    <section>
+      <p><strong><span id="idade"></span></strong> – Casado – Osasco – Vila Menck – SP<br>CNH A e B</p>
+    </section>
 
-  <header>
-    <h1>Rudivan Lima dos Santos</h1>
-    <p>Osasco - SP | CNH: A e B</p>
-    <p>Email: rudi_van@hotmail.com | rudiservicosdeti@gmail.com</p>
-    <p>LinkedIn: linkedin.com/in/rudilima | WhatsApp: (11) 99331-2157</p>
-  </header>
+    <h2>Objetivo Profissional</h2>
+    <p><strong>Analista de Suporte</strong></p>
 
-  <section>
-    <h2>Informações Pessoais</h2>
-    <p>Idade: 28 anos</p>
-    <p>Estado civil: Casado</p>
-    <p>Cidade: Osasco - Vila Menck - SP</p>
-    <p>CNH: Categoria A e B</p>
-  </section>
+    <h2>Formação Acadêmica</h2>
+    <ul>
+      <li>ESTÁCIO/FNC – Gestão em Tecnologia da Informação – Concluído em 2016</li>
+      <li>ITB Paulista – Técnico em Redes de Computadores – Concluído em 2018</li>
+    </ul>
 
-  <section>
-    <h2>Cargo Pretendido</h2>
-    <p>Analista de Suporte</p>
-  </section>
+    <h2>Cursos</h2>
+    <ul>
+      <li>Microsoft MD-102: Microsoft 365 Endpoint Administrator – Green Tecnologia</li>
+      <li>Microsoft AZ-900: Azure Fundamentals – Ka Solutions</li>
+      <li>Microsoft MS-900: Microsoft 365 Fundamentals – Ka Solutions</li>
+      <li>Office 365 para Administradores – Wenz Cursos</li>
+      <li>LGPD Essentials – TI Exames</li>
+    </ul>
 
-  <section>
+    <h2>Certificações</h2>
+    <ul>
+      <li>Scrum Foundation Professional Certificate (SFPC) – Certiprof</li>
+      <li>Kanban Foundation (KIKF) – Certiprof</li>
+    </ul>
+
     <h2>Resumo das Qualificações</h2>
     <ul>
       <li>Funções de apoio e orientação ao usuário desktop e notebook</li>
-      <li>Monitoramento com Zabbix e Grafana</li>
-      <li>Instalação, configuração e manutenção de software Windows</li>
-      <li>Gerenciamento de impressoras e dispositivos diversos</li>
-      <li>Suporte aos usuários nível I, II e VIP</li>
-      <li>Infraestrutura de redes LAN/WAN e protocolos de comunicação</li>
+      <li>Monitoramento através de Zabbix e Grafana</li>
+      <li>Manuseio de ferramentas para manutenção de hardware e suporte técnico</li>
+      <li>Instalação e configuração de softwares</li>
+      <li>Gerenciamento de impressoras e dispositivos de rede</li>
+      <li>Suporte a usuários nível I, II e VIP</li>
+      <li>Domínio de redes LAN/WAN e protocolos de comunicação</li>
       <li>Administração de servidores Windows</li>
-      <li>Criação e gerenciamento de usuários, grupos e permissões (ERP, AD, Office 365)</li>
-      <li>Chamados via Cervello, Mildesk, SysAid</li>
-      <li>Implantação de domínios, WSUS, OCS, Lansweeper</li>
-      <li>Gestão de telefonia VOIP</li>
-      <li>Documentação e manuais de processos para equipe e usuários</li>
-      <li>Instalação/configuração SAP, ferramentas de acesso remoto (EchoVNC, Anydesk etc.)</li>
-      <li>Organização de Racks, cabeamento e certificação de cabos</li>
+      <li>Criação e manutenção de usuários e grupos em Active Directory e Office 365</li>
+      <li>Implantação de domínios, controle via WSUS, OCS e Lansweeper</li>
+      <li>Administração de telefonia VOIP</li>
+      <li>Documentação de processos e rotinas de suporte</li>
+      <li>Utilização de ferramentas de acesso remoto (EchoVNC, AnyDesk, TeamViewer)</li>
     </ul>
-  </section>
 
-  <section>
-    <h2>Formação Acadêmica</h2>
-    <ul>
-      <li>Gestão em Tecnologia da Informação - ESTÁCIO/FNC - 2016</li>
-      <li>Técnico em Redes de Computadores - ITB Paulista - 2018</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Cursos</h2>
-    <ul>
-      <li>Microsoft MD-102: Microsoft 365 Endpoint Administrator - Green Tecnologia</li>
-      <li>Microsoft AZ-900: Azure Fundamentals - Ka Solutions</li>
-      <li>Microsoft MS-900: Microsoft 365 Fundamentals - Ka Solutions</li>
-      <li>Office 365 para Administradores - Wenz Cursos</li>
-      <li>LGPD Essentials - TI Exames</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Certificações</h2>
-    <ul>
-      <li>Scrum Foundation Professional Certificate (SFPC) - Certiprof</li>
-      <li>Kanban Foundation (KIKF) - Certiprof</li>
-    </ul>
-  </section>
-
-  <section>
     <h2>Histórico Profissional</h2>
-    <p><strong>MILLS (Out 2021 ~ Atual)</strong><br>
-    Atendimento remoto/telefônico, N2 e VIP. Gerenciamento via AD, O365, LanSweeper, Mildesk, SysAid. Administração de File Server, OU, criação de usuários e ramais em PABX em nuvem, controle de parque de máquinas. Monitoramento com Zabbix e Grafana.</p>
+    <h3>MILLS (Out 2021 ~ Atual)</h3>
+    <p>Atendimento remoto e telefônico, suporte N2 e VIP, suporte a máquinas e desktops, gerenciamento de usuários via Active Directory e Office 365, controle de parque de máquinas, monitoramento com Zabbix e Grafana, utilização de Mildesk e SysAid.</p>
 
-    <p><strong>5ASEC BRASIL FRANCHISING (Jun 2021 ~ Out 2021)</strong><br>
-    Suporte N1, N2 e VIP. Sistema de PDV "Atendimento", telefonia via Mobcall, Claro Empresas, Postman, MySQL, Google Admin, LocaWeb, Azure Backup, Kaspersky.</p>
+    <h3>5ASEC BRASIL FRANCHISING (Jun 2021 ~ Out 2021)</h3>
+    <p>Suporte a sistemas de PDV, administração de Google Admin e telefonia VOIP, atendimento remoto e presencial, administração de backups Azure, utilização de Postman e MySQL.</p>
 
-    <p><strong>BS TECNOLOGIA (Out 2020 ~ Jun 2021)</strong><br>
-    Atendimento remoto/telefônico, N1/N2, gerenciamento de usuários com AD e Office 365, suporte a impressoras, tratativas com Dell, monitoramento com LanSweeper, Mildesk.</p>
-  </section>
+    <h3>BS TECNOLOGIA (Out 2020 ~ Jun 2021)</h3>
+    <p>Suporte técnico remoto e presencial, atendimento de usuários nível 1 e 2, utilização de Mildesk, gerenciamento de Office 365 e Active Directory, suporte a impressoras e equipamentos diversos.</p>
 
-  <section>
     <h2>Idiomas</h2>
     <ul>
-      <li>Inglês - Leitura e Interpretação de Textos Técnicos</li>
-      <li>Libras - Nível básico de conversação - concluído em 2019</li>
+      <li>Inglês – Leitura e Interpretação de Textos Técnicos</li>
+      <li>Libras – Nível básico de conversação</li>
     </ul>
-  </section>
 
+    <footer>
+      <p>Disponível também para trabalhos como Pessoa Jurídica (CNPJ: 57.495.934/0001-69)</p>
+      <img src="https://raw.githubusercontent.com/RudiLima/Meu_CV/refs/heads/main/Logo.png" alt="Logotipo Rudivan Lima">
+    </footer>
+  </div>
 </body>
 </html>
