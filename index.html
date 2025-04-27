@@ -11,6 +11,7 @@
       background-color: #e6ecf5;
       font-family: 'Segoe UI', sans-serif;
       color: #333;
+      position: relative;
     }
     .container {
       max-width: 850px;
@@ -20,28 +21,35 @@
       border: 5px solid #0A66C2;
     }
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+      text-align: center;
       border-bottom: 2px solid #0A66C2;
-      padding-bottom: 1rem;
       margin-bottom: 2rem;
+      padding-bottom: 1rem;
     }
-    .info-left {
-      font-size: 1.8rem;
+    .info-pessoais {
+      margin-top: 0.5rem;
+      font-size: 1rem;
       color: #0A66C2;
-      font-weight: bold;
     }
-    .info-right {
+    .contatos {
       text-align: right;
       font-size: 0.9rem;
+      margin-top: -60px;
     }
-    .info-right a {
+    .contatos h4 {
+      color: #0A66C2;
+      margin-bottom: 0.5rem;
+    }
+    .contatos a {
       color: #0A66C2;
       text-decoration: none;
-      display: block;
-      margin-bottom: 0.3rem;
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    .contatos img {
+      width: 18px;
+      margin-right: 5px;
     }
     section {
       margin-bottom: 2rem;
@@ -75,6 +83,24 @@
       margin-top: 1rem;
       opacity: 0.8;
     }
+    /* Botão Flutuante */
+    .btn-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #0A66C2;
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   </style>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
@@ -92,20 +118,26 @@
 <body>
   <div class="container">
     <header>
-      <div class="info-left">
-        Rudivan Lima dos Santos
+      <h1 style="color:#0A66C2;">Rudivan Lima dos Santos</h1>
+      <div class="info-pessoais">
+        <span id="idade"></span> – Casado – Osasco – Vila Menck – SP<br>CNH A e B
       </div>
-      <div class="info-right">
-        (11) 9.9331-2157<br>
-        <a href="http://www.linkedin.com/in/rudilima" target="_blank">LinkedIn</a>
-        <a href="mailto:rudi_van@hotmail.com">rudi_van@hotmail.com</a>
-        <a href="mailto:rudiservicosdeti@gmail.com">rudiservicosdeti@gmail.com</a>
+      <div class="contatos">
+        <h4>Entre em contato através dos links:</h4>
+        <a href="https://api.whatsapp.com/send?phone=5511993312157&text=Ol%C3%A1%2C%20Tudo%20bem%20%3F" target="_blank">
+          <img src="https://raw.githubusercontent.com/RudiLima/Meu_CV/refs/heads/main/ico_zap.png" alt="WhatsApp"> (11) 9.9331-2157
+        </a>
+        <a href="http://www.linkedin.com/in/rudilima" target="_blank">
+          <img src="https://raw.githubusercontent.com/RudiLima/Meu_CV/refs/heads/main/ico_linkedin.png" alt="LinkedIn"> LinkedIn
+        </a>
+        <a href="mailto:rudi_van@hotmail.com">
+          <img src="https://raw.githubusercontent.com/RudiLima/Meu_CV/refs/heads/main/ico_outlook.png" alt="Outlook"> rudi_van@hotmail.com
+        </a>
+        <a href="mailto:rudiservicosdeti@gmail.com">
+          <img src="https://raw.githubusercontent.com/RudiLima/Meu_CV/refs/heads/main/ico_gmail.png" alt="Gmail"> rudiservicosdeti@gmail.com
+        </a>
       </div>
     </header>
-
-    <section>
-      <p><strong><span id="idade"></span></strong> – Casado – Osasco – Vila Menck – SP<br>CNH A e B</p>
-    </section>
 
     <h2>Objetivo Profissional</h2>
     <p><strong>Analista de Suporte</strong></p>
@@ -133,30 +165,25 @@
 
     <h2>Resumo das Qualificações</h2>
     <ul>
-      <li>Funções de apoio e orientação ao usuário desktop e notebook</li>
-      <li>Monitoramento através de Zabbix e Grafana</li>
-      <li>Manuseio de ferramentas para manutenção de hardware e suporte técnico</li>
-      <li>Instalação e configuração de softwares</li>
-      <li>Gerenciamento de impressoras e dispositivos de rede</li>
-      <li>Suporte a usuários nível I, II e VIP</li>
-      <li>Domínio de redes LAN/WAN e protocolos de comunicação</li>
-      <li>Administração de servidores Windows</li>
-      <li>Criação e manutenção de usuários e grupos em Active Directory e Office 365</li>
-      <li>Implantação de domínios, controle via WSUS, OCS e Lansweeper</li>
-      <li>Administração de telefonia VOIP</li>
-      <li>Documentação de processos e rotinas de suporte</li>
-      <li>Utilização de ferramentas de acesso remoto (EchoVNC, AnyDesk, TeamViewer)</li>
+      <li>Funções de apoio e orientação ao usuário desktop e notebook - Monitoramento de redes com Zabbix e Grafana - Instalação e manutenção de softwares Windows</li>
+      <li>Gerenciamento de impressoras e dispositivos - Suporte a usuários N1, N2 e VIP</li>
+      <li>Administração de servidores Windows - Gerenciamento de usuários em Active Directory e Office 365</li>
+      <li>Implantação de domínios, WSUS, OCS, Lansweeper - Suporte VOIP - Documentação de processos</li>
+      <li>Organização de racks - Certificação de cabos - Suporte SAP e ferramentas de acesso remoto</li>
     </ul>
 
     <h2>Histórico Profissional</h2>
     <h3>MILLS (Out 2021 ~ Atual)</h3>
-    <p>Atendimento remoto e telefônico, suporte N2 e VIP, suporte a máquinas e desktops, gerenciamento de usuários via Active Directory e Office 365, controle de parque de máquinas, monitoramento com Zabbix e Grafana, utilização de Mildesk e SysAid.</p>
+    <p><strong>Cargo:</strong> Analista de Infraestrutura Jr.</p>
+    <p><strong>Principais Atividades:</strong> Atendimento remoto - Atendimento telefônico - Atendimento N2 e VIP - Suporte à máquinas e desktops - Gerenciamento de usuários via Active Directory e Office 365 - Monitoramento de impressoras via LanSweeper - Chamados Dell, Mildesk e SysAid - Suporte Office e Outlook - Suporte impressoras Kyocera, Xerox e Epson - Administração File Server e AD - Acompanhamento de Projetos - Controle do parque de máquinas - Criação de usuários e ramais em PABX em nuvem - Monitoramento de filiais via Zabbix e Grafana.</p>
 
     <h3>5ASEC BRASIL FRANCHISING (Jun 2021 ~ Out 2021)</h3>
-    <p>Suporte a sistemas de PDV, administração de Google Admin e telefonia VOIP, atendimento remoto e presencial, administração de backups Azure, utilização de Postman e MySQL.</p>
+    <p><strong>Cargo:</strong> Analista de Suporte e Serviços de T.I</p>
+    <p><strong>Principais Atividades:</strong> Suporte N1, N2 e VIP - Suporte sistema PDV - Telefonia Mobcall - Gerenciamento Claro Empresas - Suporte impressoras Brother - API Postman - Consultas MySQL - Administração Google Admin e Locaweb - Suporte Azure Backup - Suporte Antivírus Kaspersky - Suporte Office e Outlook.</p>
 
     <h3>BS TECNOLOGIA (Out 2020 ~ Jun 2021)</h3>
-    <p>Suporte técnico remoto e presencial, atendimento de usuários nível 1 e 2, utilização de Mildesk, gerenciamento de Office 365 e Active Directory, suporte a impressoras e equipamentos diversos.</p>
+    <p><strong>Cargo:</strong> Analista de Suporte Técnico Jr.</p>
+    <p><strong>Principais Atividades:</strong> Atendimento remoto e presencial - Suporte N1 e N2 - Suporte máquinas e impressoras - Gerenciamento Active Directory e Office 365 - Suporte Mildesk - Suporte Office e Outlook.</p>
 
     <h2>Idiomas</h2>
     <ul>
@@ -166,8 +193,11 @@
 
     <footer>
       <p>Disponível também para trabalhos como Pessoa Jurídica (CNPJ: 57.495.934/0001-69)</p>
-      <img src="https://raw.githubusercontent.com/RudiLima/Meu_CV/refs/heads/main/Logo.png" alt="Logotipo Rudivan Lima">
+      <img src="https://raw.githubusercontent.com/RudiLima/Meu_CV/refs/heads/main/Logo.png" alt="Logo Rudivan Lima">
     </footer>
   </div>
+
+  <!-- Botão Flutuante de Baixar CV -->
+  <a href="SEU-ARQUIVO-CV.pdf" download class="btn-float" title="Baixar CV">⬇️</a>
 </body>
 </html>
